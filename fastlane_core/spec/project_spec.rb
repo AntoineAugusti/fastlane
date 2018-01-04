@@ -423,6 +423,15 @@ describe FastlaneCore do
         expect(FastlaneCore::Project.run_command(cmd)).to eq("HO\n")
       end
 
+      it "has what it needs to run ruby -e commands" do
+        expect(`which ruby`).to match(/ruby$/)
+      end
+
+      it "can do the same with run_command" do
+        cmd = 'which ruby'
+        expect(FastlaneCore::Project.run_command(cmd)).to match(/ruby$/)
+      end
+
       it "runs more complicated commands" do
         cmd = "ruby -e 'sleep 0.1; puts \"HI\"'"
         expect(FastlaneCore::Project.run_command(cmd)).to eq("HI\n")
