@@ -424,12 +424,12 @@ describe FastlaneCore do
       end
 
       it "has what it needs to run ruby -e commands" do
-        expect(`which ruby`).to match(/ruby$/)
+        expect(`where.exe ruby`).to match(/lala$/)
       end
 
       it "can do the same with run_command" do
-        cmd = 'which ruby'
-        expect(FastlaneCore::Project.run_command(cmd)).to match(/ruby$/)
+        cmd = 'where.exe ruby'
+        expect(FastlaneCore::Project.run_command(cmd)).to match(/lala$/)
       end
 
       it "runs more complicated commands" do
