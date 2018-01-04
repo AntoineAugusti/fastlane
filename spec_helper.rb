@@ -101,7 +101,7 @@ RSpec.configure do |config|
 
   end
 
-  # skip some more tests if runnon on windows
+  # skip some more tests if run on on Windows
   if FastlaneCore::Helper.is_windows?
     config.define_derived_metadata(:requires_xar) do |meta|
       meta[:skip] = "Skipped: Requires `xar` to be installed (which is not possible on Windows and no workaround has been implemented)"

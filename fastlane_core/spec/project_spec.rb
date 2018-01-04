@@ -423,18 +423,18 @@ describe FastlaneCore do
         expect(FastlaneCore::Project.run_command(cmd)).to eq("HO\n")
       end
 
-      it "has a useful PATH" do
-        expect(ENV['PATH']).to match(/lala$/)
-      end
+      # it "has a useful PATH" do
+      #   expect(ENV['PATH']).to match(/lala$/)
+      # end
 
-      it "has what it needs to run ruby -e commands" do
-        expect(`where.exe ruby`).to match(/lala$/)
-      end
+      # it "has what it needs to run ruby -e commands" do
+      #   expect(`where.exe ruby`).to match(/lala$/)
+      # end
 
-      it "can do the same with run_command" do
-        cmd = 'where.exe ruby'
-        expect(FastlaneCore::Project.run_command(cmd)).to match(/lala$/)
-      end
+      # it "can do the same with run_command" do
+      #   cmd = 'where.exe ruby'
+      #   expect(FastlaneCore::Project.run_command(cmd)).to match(/lala$/)
+      # end
 
       it "runs more complicated commands" do
         cmd = "ruby -e 'sleep 0.1; puts \"HI\"'"
