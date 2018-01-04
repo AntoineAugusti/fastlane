@@ -422,6 +422,10 @@ describe FastlaneCore do
         cmd = 'echo HO'
         expect(FastlaneCore::Project.run_command(cmd)).to eq("HO\n")
       end
+ 
+      it "has a useful PATH" do
+        expect(ENV['PATH']).to match(/lala$/)
+      end
 
       it "has what it needs to run ruby -e commands" do
         expect(`where.exe ruby`).to match(/lala$/)
