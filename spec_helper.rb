@@ -51,6 +51,9 @@ RSpec.configure do |config|
     rescue NoMethodError
       # no method implemented
     end
+
+    # find out when PATH is emptied
+    expect(ENV['PATH']).to be_truthy
   end
 
   config.after(:each) do |current_test|
