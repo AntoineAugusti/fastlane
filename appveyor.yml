@@ -19,9 +19,11 @@ environment:
 
 before_test:
   - ruby -v
+  - which ruby
   - gem -v
   - bundle -v
-  - iconv --help
+  - which iconv
+  - which openssl
 
 build: off
 
