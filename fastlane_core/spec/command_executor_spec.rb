@@ -46,6 +46,8 @@ describe FastlaneCore do
 
           # with_env_values('PATH' => temp_dir) do
           allow(ENV).to receive(:[]).with('PATH').and_return(temp_dir)
+          allow(ENV).to receive(:[]).with('PATHEXT').and_return(ENV['PATHEXT'])
+
           expect(FastlaneCore::CommandExecutor.which(temp_cmd)).to eq(f.path)
           # end
         end

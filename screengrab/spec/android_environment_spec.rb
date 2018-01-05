@@ -4,6 +4,7 @@ describe Screengrab do
       it "finds no useful values" do
         # with_env_values('PATH' => 'screengrab/spec/fixtures/empty_home_empty_path/path') do
         allow(ENV).to receive(:[]).with('PATH').and_return('screengrab/spec/fixtures/empty_home_empty_path/path')
+        allow(ENV).to receive(:[]).with('PATHEXT').and_return(ENV['PATHEXT'])
 
         android_env = Screengrab::AndroidEnvironment.new('screengrab/spec/fixtures/empty_home_empty_path/android_home', nil)
 
@@ -21,6 +22,7 @@ describe Screengrab do
       it "finds commands on the PATH" do
         # with_env_values('PATH' => 'screengrab/spec/fixtures/empty_home_complete_path/path') do
         allow(ENV).to receive(:[]).with('PATH').and_return('screengrab/spec/fixtures/empty_home_complete_path/path')
+        allow(ENV).to receive(:[]).with('PATHEXT').and_return(ENV['PATHEXT'])
 
         android_env = Screengrab::AndroidEnvironment.new('screengrab/spec/fixtures/empty_home_complete_path/android_home', nil)
 
